@@ -1,4 +1,4 @@
-const { CDSLocaleProvider } = require("../app/assets/javascripts/calendar_date_select/calendar_date_select");
+const { CDSLocaleProvider } = require("../src/calendar_date_select");
 
 describe("CDSLocaleProvider", () => {
   describe("constructor", () => {

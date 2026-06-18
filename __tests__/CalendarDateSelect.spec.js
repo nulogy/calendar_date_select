@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-require("../app/assets/javascripts/calendar_date_select/calendar_date_select");
+require("../src/calendar_date_select");
 const { CalendarDateSelect, CDSLocaleProvider } = window;
 const $ = require('jquery');
 
