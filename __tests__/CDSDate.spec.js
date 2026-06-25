@@ -1,4 +1,4 @@
-const { CalendarDateSelect, CDSLocaleProvider, CDSDate } = require("../app/assets/javascripts/calendar_date_select/calendar_date_select");
+const { CalendarDateSelect, CDSLocaleProvider, CDSDate } = require("../src/calendar_date_select");
 
 const testMonths = 'JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC'.split(' ');
 

@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-require("../app/assets/javascripts/calendar_date_select/calendar_date_select");
+require("../src/calendar_date_select");
 const { CalendarDateSelect, CDSLocaleProvider } = window;
 const $ = require('jquery');
 
@@ -337,6 +337,13 @@ describe('CalendarDateSelect', () => {
     CalendarDateSelect.LOCALE_PROVIDER = new CDSLocaleProvider("M T W T F S S".split(' '), [], 1, {});
     testCDS("December 1, 2007", null, cds => {
       expect(cds.beginning_date.getDay()).toBe(1);
+    });
+  });
+  it('it should rotate the weekday header to start on firstDayOfWeek',() => {
+    CalendarDateSelect.LOCALE_PROVIDER = new CDSLocaleProvider("Su Mo Tu We Th Fr Sa".split(' '), [], 1, {});
+    testCDS("December 1, 2007", null, () => {
+      const headers = $('.calendar_date_select thead th').map((i, th) => th.innerHTML).get();
+      expect(headers).toEqual(["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]);
     });
   });
   it('it should fire onchange on the input field',() => {

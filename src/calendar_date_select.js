@@ -562,7 +562,11 @@
       this.calendar_day_grid = [];
       let days_table = createElement(body_div, "table", {cellPadding: "0px", cellSpacing: "0px", width: "100%"});
       let weekdays_row = createElement(createElement(days_table, "thead"), "tr");
-      this.locale.weekdays.forEach(weekday => createElement(weekdays_row, "th", {innerHTML: weekday}));
+      // weekdays is Sunday-first; rotate by firstDayOfWeek so the header aligns with the day cells below.
+      for (let column = 0; column < 7; column++) {
+        let weekday = this.locale.weekdays[(column + this.locale.firstDayOfWeek) % 7];
+        createElement(weekdays_row, "th", {innerHTML: weekday});
+      }
 
       let days_tbody = createElement(days_table, "tbody")
       // Make the days!

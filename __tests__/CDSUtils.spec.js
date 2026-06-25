@@ -1,4 +1,4 @@
-const { CDSUtils } = require("../app/assets/javascripts/calendar_date_select/calendar_date_select");
+const { CDSUtils } = require("../src/calendar_date_select");
 
 describe("objectsToMap", () => {
   test("it should convert object keys and values to a map", () => {

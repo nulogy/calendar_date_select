@@ -1,3 +1,7 @@
+== Version 4.2.3
+
+* Rotated the weekday header by firstDayOfWeek so it aligns with the day cells for locales whose week does not start on Sunday.
+
 == Version 4.2.2
 
 WARNING: The date formatting and translation system has been completely rewritten to break the dependency
